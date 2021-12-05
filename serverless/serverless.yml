@@ -1,0 +1,13 @@
+service: serverless-ethers
+provider:
+  name: aws
+  runtime: nodejs12.x
+  environment:
+    CHAIN_ID: 3
+    DEFAULT_GAS_PRICE: 60000000000
+
+functions:
+  exec:
+    handler: endRent.handler
+    events:
+      - schedule: rate(10 minutes)
